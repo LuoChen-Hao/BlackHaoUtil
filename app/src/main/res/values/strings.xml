@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BlackHaoUtil</string>
+    <string name="copy_failed">复制文件失败</string>
+</resources>

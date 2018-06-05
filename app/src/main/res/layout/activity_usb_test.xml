@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--本地文件-->
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:background="#26afcc">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="本地文件"
+            android:textColor="#ffff"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/local_backspace_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/selector_btn_backspace"
+            android:contentDescription="@null"
+            android:onClick="onClick" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/local_file_lv"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:divider="@drawable/shape_line" />
+
+    <!--USB文件-->
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:layout_alignParentEnd="true"
+        android:background="#26afcc">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="USB文件"
+            android:textColor="#ffff"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/usb_backspace_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/selector_btn_backspace"
+            android:contentDescription="@null"
+            android:onClick="onClick" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/usb_file_lv"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:divider="@drawable/shape_line" />
+
+    <TextView
+        android:id="@+id/show_progress_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="16sp" />
+</RelativeLayout>

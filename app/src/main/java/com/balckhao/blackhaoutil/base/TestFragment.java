@@ -2,8 +2,11 @@ package com.balckhao.blackhaoutil.base;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.balckhao.blackhaoutil.R;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,6 +21,8 @@ public class TestFragment extends BaseFragment {
 
     @Bind(R.id.iv_1)
     ImageView iv1;
+    @Bind(R.id.lv_test)
+    ListView lvTest;
 
     @Override
     protected int initLayoutRes() {
@@ -32,6 +37,17 @@ public class TestFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("Hello World, Android.ppt");
+        arrayList.add("Hello World, Java.pdf");
+        arrayList.add("Hello World, JS.pdf");
+        arrayList.add("Hello World, C.ppt");
+        arrayList.add("Hello World, C++");
+        arrayList.add("Hello World, C#.pdf");
+        arrayList.add("Hello World, Python.ppt");
+        arrayList.add("Hello World, PHP");
+        TestAdapter testAdapter = new TestAdapter(arrayList, getContext());
+        lvTest.setAdapter(testAdapter);
     }
 
     @Override
@@ -44,4 +60,5 @@ public class TestFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
 }

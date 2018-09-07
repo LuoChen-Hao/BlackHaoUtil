@@ -27,6 +27,7 @@ public class TestActivity extends BaseActivity {
     protected void initUI() {
         setContentView(R.layout.activity_base_test);
         ButterKnife.bind(this);
+        //replaceFragment
         replaceFragment(R.id.frame_1, new TestFragment());
         replaceFragment(R.id.frame_2, new TestFragment());
     }

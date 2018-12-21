@@ -1,9 +1,10 @@
-package com.balckhao.blackhaoutil.base;
+package com.balckhao.blackhaoutil.base.test;
 
 import android.os.Message;
 import android.widget.TextView;
 
 import com.balckhao.blackhaoutil.R;
+import com.balckhao.blackhaoutil.base.BaseActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

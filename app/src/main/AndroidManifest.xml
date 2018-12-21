@@ -21,15 +21,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".base.TestActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".usbUtil.UsbTestActivity"/>
-        <!--<activity android:name=".base.TestActivity" />-->
+        <activity android:name=".usbUtil.UsbTestActivity" />
+        <activity android:name=".base.test.TestActivity" />
+        <activity android:name=".mvp.test.MvpTestActivity" />
     </application>
 
 </manifest>

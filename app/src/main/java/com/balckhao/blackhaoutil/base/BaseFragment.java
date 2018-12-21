@@ -2,6 +2,7 @@ package com.balckhao.blackhaoutil.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.SparseArray;
@@ -77,9 +78,9 @@ public abstract class BaseFragment extends Fragment {
     }
 
     /**
-     * 显示Toast（可以在子线程中调用）
+     * 显示 Toast（可以在子线程中调用）
      */
-    public void showToast(int strId) {
+    public void showToast(@StringRes int strId) {
         baseActivity.showToast(strId);
     }
 

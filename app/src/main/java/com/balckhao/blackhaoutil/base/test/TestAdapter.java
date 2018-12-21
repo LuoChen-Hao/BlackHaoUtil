@@ -1,17 +1,18 @@
-package com.balckhao.blackhaoutil.base;
+package com.balckhao.blackhaoutil.base.test;
 
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.balckhao.blackhaoutil.R;
+import com.balckhao.blackhaoutil.base.CommonBaseAdapter;
 
 import java.util.List;
 
 /**
  * Author ： BlackHao
  * Time : 2018/9/4 14:58
- * Description :
+ * Description : TestAdapter
  */
 public class TestAdapter extends CommonBaseAdapter<String> {
 

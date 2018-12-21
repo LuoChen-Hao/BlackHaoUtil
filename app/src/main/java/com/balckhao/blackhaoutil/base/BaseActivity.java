@@ -1,13 +1,18 @@
 package com.balckhao.blackhaoutil.base;
 
+import android.annotation.StringRes;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -109,7 +114,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 显示 Toast（可以在子线程中调用）
      */
-    public void showToast(int strId) {
+    public void showToast(@StringRes int strId) {
         showToast(getString(strId));
     }
 
@@ -119,7 +124,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param frameId      frameLayout id
      * @param showFragment 需要显示的 Fragment
      */
-    public void replaceFragment(int frameId, Fragment showFragment) {
+    public void replaceFragment(@IdRes int frameId, Fragment showFragment) {
         Fragment currentFragment = fragmentArray.get(frameId);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         //用于fragment的显示与隐藏

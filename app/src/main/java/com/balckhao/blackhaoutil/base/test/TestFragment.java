@@ -1,10 +1,11 @@
-package com.balckhao.blackhaoutil.base;
+package com.balckhao.blackhaoutil.base.test;
 
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.balckhao.blackhaoutil.R;
+import com.balckhao.blackhaoutil.base.BaseFragment;
 
 import java.util.ArrayList;
 

@@ -45,7 +45,7 @@ public class SharedPreferencesUtil {
     }
 
     /**
-     * 保存数据到SharedPreferences
+     * 保存数据到 SharedPreferences
      *
      * @param key   键
      * @param value 需要保存的数据
@@ -82,7 +82,6 @@ public class SharedPreferencesUtil {
         } catch (Exception e) {
             result = false;
             e.printStackTrace();
-//            Log.e("SharedPreferencesUtil", e.toString());
         }
         editor.apply();
         return result;
@@ -190,10 +189,10 @@ public class SharedPreferencesUtil {
     }
 
     /**
-     * 获取保存的List
+     * 获取保存的 List
      *
      * @param key key
-     * @return 对应的Lis集合
+     * @return 对应的 List集合
      */
     public static <T> List<T> getListData(String key, Class<T> cls) {
         List<T> list = new ArrayList<>();

@@ -119,7 +119,7 @@ public class LogUtil {
     }
 
     /**
-     * 数据分割成不超过MAX_LENGTH的数据
+     * 数据分割成不超过 MAX_LENGTH的数据
      *
      * @param str 需要分割的数据
      * @return 分割后的数组

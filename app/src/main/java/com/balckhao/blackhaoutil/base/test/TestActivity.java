@@ -4,7 +4,7 @@ import android.os.Message;
 import android.widget.TextView;
 
 import com.balckhao.blackhaoutil.R;
-import com.balckhao.blackhaoutil.base.BaseActivity;
+import com.blackhao.utillibrary.base.BaseActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

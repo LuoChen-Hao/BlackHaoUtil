@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.balckhao.blackhaoutil.R;
-import com.balckhao.blackhaoutil.base.CommonBaseAdapter;
+import com.blackhao.utillibrary.base.CommonBaseAdapter;
 
 import java.util.List;
 

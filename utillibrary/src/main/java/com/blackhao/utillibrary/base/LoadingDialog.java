@@ -1,4 +1,4 @@
-package com.balckhao.blackhaoutil.base;
+package com.blackhao.utillibrary.base;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -14,7 +14,7 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.TextView;
 
-import com.balckhao.blackhaoutil.R;
+import com.blackhao.utillibrary.R;
 
 /**
  * Author ： BlackHao

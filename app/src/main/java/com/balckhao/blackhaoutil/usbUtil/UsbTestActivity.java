@@ -13,11 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.balckhao.blackhaoutil.R;
+import com.blackhao.utillibrary.usbHelper.USBBroadCastReceiver;
+import com.blackhao.utillibrary.usbHelper.UsbHelper;
 import com.github.mjdev.libaums.UsbMassStorageDevice;
 import com.github.mjdev.libaums.fs.UsbFile;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 

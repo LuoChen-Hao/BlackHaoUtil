@@ -1,7 +1,7 @@
-package com.balckhao.blackhaoutil.base;
+package com.blackhao.utillibrary.base;
 
-import android.annotation.IdRes;
 import android.content.Context;
+import android.support.annotation.IdRes;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;

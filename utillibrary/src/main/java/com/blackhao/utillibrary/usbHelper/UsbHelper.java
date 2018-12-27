@@ -1,4 +1,4 @@
-package com.balckhao.blackhaoutil.usbUtil;
+package com.blackhao.utillibrary.usbHelper;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static com.balckhao.blackhaoutil.usbUtil.USBBroadCastReceiver.ACTION_USB_PERMISSION;
+import static com.blackhao.utillibrary.usbHelper.USBBroadCastReceiver.ACTION_USB_PERMISSION;
 
 
 /**

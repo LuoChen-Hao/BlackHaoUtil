@@ -1,4 +1,4 @@
-package com.balckhao.blackhaoutil.spUtil;
+package com.blackhao.utillibrary.spUtil;
 
 import android.content.Context;
 import android.content.SharedPreferences;

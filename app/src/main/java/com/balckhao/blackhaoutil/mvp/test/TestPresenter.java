@@ -2,7 +2,8 @@ package com.balckhao.blackhaoutil.mvp.test;
 
 import android.content.Context;
 
-import com.balckhao.blackhaoutil.mvp.BaseMvpPresenter;
+import com.blackhao.utillibrary.mvp.BaseMvpPresenter;
+
 
 /**
  * Author ： BlackHao

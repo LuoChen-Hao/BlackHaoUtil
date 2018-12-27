@@ -1,4 +1,4 @@
-package com.balckhao.blackhaoutil.mvp;
+package com.blackhao.utillibrary.mvp;
 
 /**
  * Author ： BlackHao

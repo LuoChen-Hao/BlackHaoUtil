@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UtilLibrary</string>
+    <string name="copy_failed">复制文件失败</string>
+    <string name="login_progress_searching">正在加载…</string>
+</resources>

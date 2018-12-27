@@ -1,4 +1,4 @@
-package com.balckhao.blackhaoutil.logUtil;
+package com.blackhao.utillibrary.logUtil;
 
 import android.util.Log;
 

@@ -1,6 +1,5 @@
-package com.balckhao.blackhaoutil.mvp;
+package com.blackhao.utillibrary.mvp;
 
-import android.annotation.StringRes;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -9,18 +8,16 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.IdRes;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.balckhao.blackhaoutil.base.LoadingDialog;
-import com.balckhao.blackhaoutil.logUtil.LogUtil;
+import com.blackhao.utillibrary.base.LoadingDialog;
+import com.blackhao.utillibrary.logUtil.LogUtil;
 
 import java.lang.ref.WeakReference;
 
@@ -340,7 +337,7 @@ public abstract class BaseMvpActivity<T extends BaseMvpPresenterImpl> extends Ap
      */
     public void translucentStatus() {
         //5.0及以上系统才支持
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.L) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             View decorView = getWindow().getDecorView();
             int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;

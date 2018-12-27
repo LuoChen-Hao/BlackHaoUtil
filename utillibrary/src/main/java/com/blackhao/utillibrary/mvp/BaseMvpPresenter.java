@@ -1,7 +1,6 @@
-package com.balckhao.blackhaoutil.mvp;
+package com.blackhao.utillibrary.mvp;
 
 import android.content.Context;
-import android.view.View;
 
 import java.lang.ref.WeakReference;
 
@@ -13,7 +12,7 @@ import java.lang.ref.WeakReference;
 public abstract class BaseMvpPresenter<T extends BaseMvpViewImpl> implements BaseMvpPresenterImpl {
 
     /**
-     * 弱引用持有
+     * 弱引用持有,避免造成内存泄漏
      */
     private WeakReference<T> mView;
     private WeakReference<Context> mContext;

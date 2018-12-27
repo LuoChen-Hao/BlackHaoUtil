@@ -1,10 +1,10 @@
-package com.balckhao.blackhaoutil.mvp;
+package com.blackhao.utillibrary.mvp;
 
-import android.annotation.StringRes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.SparseArray;
@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.balckhao.blackhaoutil.logUtil.LogUtil;
+import com.blackhao.utillibrary.logUtil.LogUtil;
 
 /**
  * Author ： BlackHao

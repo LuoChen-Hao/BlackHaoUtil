@@ -1,7 +1,8 @@
 package com.balckhao.blackhaoutil.mvp.test;
 
-import com.balckhao.blackhaoutil.mvp.BaseMvpPresenterImpl;
-import com.balckhao.blackhaoutil.mvp.BaseMvpViewImpl;
+
+import com.blackhao.utillibrary.mvp.BaseMvpPresenterImpl;
+import com.blackhao.utillibrary.mvp.BaseMvpViewImpl;
 
 /**
  * Author ： BlackHao

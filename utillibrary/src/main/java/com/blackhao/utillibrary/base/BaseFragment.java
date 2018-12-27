@@ -1,4 +1,4 @@
-package com.balckhao.blackhaoutil.base;
+package com.blackhao.utillibrary.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.balckhao.blackhaoutil.logUtil.LogUtil;
+import com.blackhao.utillibrary.logUtil.LogUtil;
 
 /**
  * Author ： BlackHao

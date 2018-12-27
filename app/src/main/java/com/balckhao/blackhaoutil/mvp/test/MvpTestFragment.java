@@ -1,14 +1,12 @@
 package com.balckhao.blackhaoutil.mvp.test;
 
 import android.graphics.Color;
-import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.balckhao.blackhaoutil.R;
-import com.balckhao.blackhaoutil.mvp.BaseMvpActivity;
-import com.balckhao.blackhaoutil.mvp.BaseMvpFragment;
+import com.blackhao.utillibrary.mvp.BaseMvpFragment;
 
 /**
  * Author ： BlackHao

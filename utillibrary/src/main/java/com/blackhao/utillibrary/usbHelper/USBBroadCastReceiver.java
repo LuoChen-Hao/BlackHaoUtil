@@ -1,4 +1,4 @@
-package com.balckhao.blackhaoutil.usbUtil;
+package com.blackhao.utillibrary.usbHelper;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

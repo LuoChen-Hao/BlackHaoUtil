@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.balckhao.blackhaoutil.R;
-import com.balckhao.blackhaoutil.base.BaseFragment;
+import com.blackhao.utillibrary.base.BaseFragment;
 
 import java.util.ArrayList;
 

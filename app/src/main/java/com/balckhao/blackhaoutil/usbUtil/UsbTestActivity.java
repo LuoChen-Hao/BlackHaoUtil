@@ -22,22 +22,20 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import butterknife.BindView;
 
 public class UsbTestActivity extends AppCompatActivity implements USBBroadCastReceiver.UsbListener {
 
-    @Bind(R.id.local_backspace_iv)
+    @BindView(R.id.local_backspace_iv)
     ImageButton localBackspaceIv;
-    @Bind(R.id.local_file_lv)
+    @BindView(R.id.local_file_lv)
     ListView localFileLv;
-    @Bind(R.id.usb_backspace_iv)
+    @BindView(R.id.usb_backspace_iv)
     ImageButton usbBackspaceIv;
-    @Bind(R.id.usb_file_lv)
+    @BindView(R.id.usb_file_lv)
     ListView usbFileLv;
-    @Bind(R.id.show_progress_tv)
+    @BindView(R.id.show_progress_tv)
     TextView showProgressTv;
-
     //本地文件列表相关
     private ArrayList<File> localList;
     private FileListAdapter<File> localAdapter;
@@ -52,7 +50,7 @@ public class UsbTestActivity extends AppCompatActivity implements USBBroadCastRe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usb_test);
-        ButterKnife.bind(this);
+        butterknife.ButterKnife.bind(this);
         initLocalFile();
         initUsbFile();
     }

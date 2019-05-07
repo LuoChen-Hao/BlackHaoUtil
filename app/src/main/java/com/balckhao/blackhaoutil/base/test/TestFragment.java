@@ -5,12 +5,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.balckhao.blackhaoutil.R;
-import com.blackhao.utillibrary.base.BaseFragment;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import butterknife.BindView;
 
 /**
  * Author ： BlackHao
@@ -20,10 +18,11 @@ import butterknife.ButterKnife;
 public class TestFragment extends BaseFragment {
 
 
-    @Bind(R.id.iv_1)
+    @BindView(R.id.iv_1)
     ImageView iv1;
-    @Bind(R.id.lv_test)
+    @BindView(R.id.lv_test)
     ListView lvTest;
+    butterknife.Unbinder unbinder;
 
     @Override
     protected int initLayoutRes() {
@@ -32,7 +31,7 @@ public class TestFragment extends BaseFragment {
 
     @Override
     protected void initUI(View view) {
-        ButterKnife.bind(this, view);
+        unbinder = butterknife.ButterKnife.bind(this, view);
         iv1.setImageResource(R.mipmap.ic_launcher);
     }
 
@@ -59,7 +58,7 @@ public class TestFragment extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+
     }
 
 }

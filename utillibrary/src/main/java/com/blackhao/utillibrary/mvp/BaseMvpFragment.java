@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.blackhao.utillibrary.logUtil.LogUtil;
+import com.blackhao.utillibrary.log.LogHelper;
 
 /**
  * Author ： BlackHao
@@ -24,11 +24,10 @@ public abstract class BaseMvpFragment<T extends BaseMvpPresenterImpl> extends Fr
 
     //用于保存对应 FrameLayout当前显示的 Fragment
     private SparseArray<Fragment> fragmentArray;
-    //LogUtil
-    public LogUtil log;
+    //LogHelper
+    public LogHelper log;
     // Presenter
-    private T mPresenter;
-    //Activity
+    private T mPresenter;    //Activity
     private BaseMvpActivity activity;
 
     @Override

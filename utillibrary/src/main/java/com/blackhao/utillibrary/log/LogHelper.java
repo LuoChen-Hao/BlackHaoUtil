@@ -1,26 +1,50 @@
-package com.blackhao.utillibrary.logUtil;
+package com.blackhao.utillibrary.log;
 
+import android.content.Context;
+import android.text.TextUtils;
 import android.util.Log;
+
+import com.blackhao.utillibrary.BuildConfig;
+import com.blackhao.utillibrary.time.TimeUtil;
+
+import java.io.File;
+import java.io.FileWriter;
 
 /**
  * Author ： BlackHao
  * Time : 2017/8/1 14:05
  * Description : Log 工具类 ,支持跳转对应的代码位置
  */
-public class LogUtil {
+public class LogHelper {
+
     //单例
-    private static LogUtil logUtil;
+    private static LogHelper logUtil;
+    //打印等级(这里用于release版本打印)
+    private static int LOG_LEVEL = Log.ERROR;
     //打印调试开关
-    private static boolean IS_DEBUG = true;
-    //Log 单词打印的最大长度
+    private static boolean IS_DEBUG = BuildConfig.DEBUG;
+    //Log 单次打印的最大长度
     private static final int MAX_LENGTH = 3 * 1024;
+    //是否需要写文件
+    private static final boolean IS_WRITE_FILE = true;
+    //文件路径
+    private static String LOG_FILE_PATH;
 
     //单例模式初始化
-    public static LogUtil getInstance() {
+    public static LogHelper getInstance() {
         if (logUtil == null) {
-            logUtil = new LogUtil();
+            logUtil = new LogHelper();
         }
         return logUtil;
+    }
+
+    /**
+     * 初始化 LOG_FILE
+     */
+    public void initLogFile(Context context) {
+        if (context != null) {
+            LOG_FILE_PATH = context.getCacheDir().getAbsolutePath() + File.separator + "QChatLog";
+        }
     }
 
     /**
@@ -36,7 +60,9 @@ public class LogUtil {
         }
         for (StackTraceElement st : sts) {
             //筛选获取需要打印的TAG
-            if (!st.isNativeMethod() && !st.getClassName().equals(Thread.class.getName()) && !st.getClassName().equals(this.getClass().getName())) {
+            if (!st.isNativeMethod()
+                    && !st.getClassName().equals(Thread.class.getName())
+                    && !st.getClassName().equals(this.getClass().getName())) {
                 //获取文件名以及打印的行数
                 tag.append("(").append(st.getFileName()).append(":").append(st.getLineNumber()).append(")");
                 return tag.toString();
@@ -51,9 +77,14 @@ public class LogUtil {
      * @param text 需要打印的内容
      */
     public synchronized void e(String text) {
-        if (IS_DEBUG) {
+        if (IS_DEBUG || Log.ERROR >= LOG_LEVEL) {
+            if (TextUtils.isEmpty(text)) {
+                Log.e(getTAG(), "Log Error text is null");
+                return;
+            }
             for (String str : splitStr(text)) {
                 Log.e(getTAG(), str);
+                writeLog("ERROR : " + getTAG() + " : " + str);
             }
         }
     }
@@ -64,9 +95,10 @@ public class LogUtil {
      * @param text 需要打印的内容
      */
     public synchronized void d(String text) {
-        if (IS_DEBUG) {
+        if (IS_DEBUG || Log.DEBUG >= LOG_LEVEL) {
             for (String str : splitStr(text)) {
                 Log.d(getTAG(), str);
+                writeLog("DEBUG : " + getTAG() + " : " + str);
             }
         }
     }
@@ -77,9 +109,10 @@ public class LogUtil {
      * @param text 需要打印的内容
      */
     public synchronized void w(String text) {
-        if (IS_DEBUG) {
+        if (IS_DEBUG || Log.WARN >= LOG_LEVEL) {
             for (String str : splitStr(text)) {
                 Log.w(getTAG(), str);
+                writeLog("WARN : " + getTAG() + " : " + str);
             }
         }
     }
@@ -90,9 +123,10 @@ public class LogUtil {
      * @param text 需要打印的内容
      */
     public synchronized void i(String text) {
-        if (IS_DEBUG) {
+        if (IS_DEBUG || Log.INFO >= LOG_LEVEL) {
             for (String str : splitStr(text)) {
                 Log.i(getTAG(), str);
+                writeLog("INFO : " + getTAG() + " : " + str);
             }
         }
     }
@@ -103,7 +137,7 @@ public class LogUtil {
      * @param json 需要打印的内容
      */
     public synchronized void json(String json) {
-        if (IS_DEBUG) {
+        if (IS_DEBUG || Log.ERROR >= LOG_LEVEL) {
             String tag = getTAG();
             try {
                 //转化后的数据
@@ -157,7 +191,7 @@ public class LogUtil {
         if (null == jsonStr || "".equals(jsonStr))
             return "";
         StringBuilder sb = new StringBuilder();
-        char last = '\0';
+        char last;
         char current = '\0';
         int indent = 0;
         boolean isInQuotationMarks = false;
@@ -215,6 +249,34 @@ public class LogUtil {
     private void addIndentBlank(StringBuilder sb, int indent) {
         for (int i = 0; i < indent; i++) {
             sb.append('\t');
+        }
+    }
+
+    /**
+     * 将 log 写入文件
+     *
+     * @param log 需要写入文件的 log
+     */
+    private void writeLog(String log) {
+        try {
+            if (!IS_WRITE_FILE) {
+                return;
+            }
+            if (LOG_FILE_PATH != null && LOG_FILE_PATH.length() > 0) {
+                File folder = new File(LOG_FILE_PATH);
+                if (folder.exists() || folder.mkdirs()) {
+                    //文件夹存在或者创建文件夹成功
+                    String file = LOG_FILE_PATH + File.separator + TimeUtil.getCurrentTime("yyyy-MM-dd") + ".txt";
+                    File logFile = new File(file);
+                    if (logFile.exists() || logFile.createNewFile()) {
+                        FileWriter writer = new FileWriter(logFile, true);
+                        writer.write(log + "\n");
+                        writer.close();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

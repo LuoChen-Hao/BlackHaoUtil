@@ -1,0 +1,18 @@
+//定义各类第三方插件的版本号
+def gsonVersion = "2.8.5"
+def butterknifeVersion = "8.8.1"
+def butterknifeCompilerVersion="9.0.0-rc3"
+
+
+gradle.ext {
+
+    depend = [
+            "gson"                : "com.google.code.gson:gson:${gsonVersion}",
+            "butterknife"         : "com.jakewharton:butterknife:${butterknifeVersion}",
+            "butterknife-compiler": "com.jakewharton:butterknife-compiler:${butterknifeCompilerVersion}"
+    ]
+}
+
+//tasks test{
+//    println("test")
+//}

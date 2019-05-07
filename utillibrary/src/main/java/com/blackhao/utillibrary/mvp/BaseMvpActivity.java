@@ -17,7 +17,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.blackhao.utillibrary.base.LoadingDialog;
-import com.blackhao.utillibrary.logUtil.LogUtil;
+import com.blackhao.utillibrary.log.LogHelper;
 
 import java.lang.ref.WeakReference;
 
@@ -27,14 +27,15 @@ import java.lang.ref.WeakReference;
  * Description : Base MVP Activity
  */
 
-public abstract class BaseMvpActivity<T extends BaseMvpPresenterImpl> extends AppCompatActivity implements BaseMvpViewImpl {
+public abstract class BaseMvpActivity<T extends BaseMvpPresenterImpl> extends AppCompatActivity
+        implements BaseMvpViewImpl {
 
     //Handler
     public WeakHandler handler;
     //用于保存对应 FrameLayout当前显示的 Fragment
     private SparseArray<Fragment> fragmentArray;
-    //LogUtil
-    public LogUtil log;
+    //LogHelper
+    public LogHelper log;
     //加载框
     private LoadingDialog loadingDialog;
     // Presenter
@@ -62,7 +63,7 @@ public abstract class BaseMvpActivity<T extends BaseMvpPresenterImpl> extends Ap
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //初始化Log
-        log = LogUtil.getInstance();
+        log = LogHelper.getInstance();
         //初始化fragmentArray
         fragmentArray = new SparseArray<>();
         //

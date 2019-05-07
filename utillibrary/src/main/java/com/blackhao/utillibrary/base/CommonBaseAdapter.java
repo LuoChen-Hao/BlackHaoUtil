@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,8 +20,8 @@ public abstract class CommonBaseAdapter<T> extends BaseAdapter {
     private List<T> list;
     private Context context;
 
-    public CommonBaseAdapter(List<T> list, Context context) {
-        this.list = list;
+    public CommonBaseAdapter(Context context) {
+        this.list = new ArrayList<>();
         this.context = context;
     }
 
@@ -30,7 +31,7 @@ public abstract class CommonBaseAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public T getItem(int position) {
         return list.get(position);
     }
 
@@ -57,6 +58,31 @@ public abstract class CommonBaseAdapter<T> extends BaseAdapter {
         }
         initData(viewHolder, list.get(position), position);
         return convertView;
+    }
+
+    /**
+     * 获取上下文对象
+     */
+    public Context getContext() {
+        return context;
+    }
+
+    /**
+     * 获取数据
+     */
+    public List<T> getList() {
+        return list;
+    }
+
+    /**
+     * 更新数据
+     */
+    public void updateList(List<T> list) {
+        this.list.clear();
+        if (list != null && list.size() > 0) {
+            this.list.addAll(list);
+        }
+        notifyDataSetChanged();
     }
 
     /**

@@ -4,13 +4,17 @@ import android.content.Context;
 
 import com.blackhao.utillibrary.mvp.BaseMvpPresenter;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 /**
  * Author ： BlackHao
  * Time : 2018/12/20 10:17
  * Description : TestPresenter
  */
-public class TestPresenter extends BaseMvpPresenter<TestMvpContract.TestViewImpl> implements TestMvpContract.TestPresenterImpl {
+public class TestPresenter extends BaseMvpPresenter<TestMvpContract.TestViewImpl>
+        implements TestMvpContract.TestPresenterImpl {
 
     public TestPresenter(Context context, TestMvpContract.TestViewImpl mView) {
         super(context, mView);
@@ -19,7 +23,8 @@ public class TestPresenter extends BaseMvpPresenter<TestMvpContract.TestViewImpl
     @Override
     public void login(final String name, final String psw) {
         getView().showLoading("正在登陆...");
-        new Thread(new Runnable() {
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        executorService.execute(new Runnable() {
             @Override
             public void run() {
                 //休眠，模拟登陆
@@ -36,7 +41,7 @@ public class TestPresenter extends BaseMvpPresenter<TestMvpContract.TestViewImpl
                 }
                 getView().dismissLoading();
             }
-        }).start();
+        });
     }
 
     @Override

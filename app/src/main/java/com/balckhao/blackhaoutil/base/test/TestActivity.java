@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.balckhao.blackhaoutil.R;
-import com.blackhao.utillibrary.base.BaseActivity;
+import com.blackhao.utillibrary.mvp.BaseActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,7 +41,6 @@ public class TestActivity extends BaseActivity {
     @Override
     protected void initData() {
         //初始化Handler
-        initHandler();
         handler.sendEmptyMessageDelayed(0, 1000);
         log.json(testJson1);
         StringBuilder sb = new StringBuilder();

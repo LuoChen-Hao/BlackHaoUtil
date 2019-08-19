@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.balckhao.blackhaoutil.R;
+import com.blackhao.utillibrary.mvp.BaseFragment;
 
 import java.util.ArrayList;
 
@@ -24,8 +25,9 @@ public class TestFragment extends BaseFragment {
     ListView lvTest;
     butterknife.Unbinder unbinder;
 
+
     @Override
-    protected int initLayoutRes() {
+    protected int initLayoutId() {
         return R.layout.fragment_one;
     }
 
@@ -46,7 +48,8 @@ public class TestFragment extends BaseFragment {
         arrayList.add("Hello World, C#.pdf");
         arrayList.add("Hello World, Python.ppt");
         arrayList.add("Hello World, PHP");
-        TestAdapter testAdapter = new TestAdapter(arrayList, getContext());
+        TestAdapter testAdapter = new TestAdapter(getContext());
+        testAdapter.getList().addAll(arrayList);
         lvTest.setAdapter(testAdapter);
     }
 
@@ -61,4 +64,8 @@ public class TestFragment extends BaseFragment {
 
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }

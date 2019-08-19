@@ -26,7 +26,7 @@ public class LogHelper {
     //Log 单次打印的最大长度
     private static final int MAX_LENGTH = 3 * 1024;
     //是否需要写文件
-    private static final boolean IS_WRITE_FILE = true;
+    private static final boolean IS_WRITE_FILE = false;
     //文件路径
     private static String LOG_FILE_PATH;
 

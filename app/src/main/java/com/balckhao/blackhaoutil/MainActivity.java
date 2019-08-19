@@ -6,10 +6,12 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ListFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.balckhao.blackhaoutil.base.test.TestActivity;
+import com.balckhao.blackhaoutil.imgProxy.ListActivity;
 import com.balckhao.blackhaoutil.mvp.test.MvpTestActivity;
 import com.balckhao.blackhaoutil.usbUtil.UsbTestActivity;
 import com.blackhao.utillibrary.file.FileUtil;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(logIntent);
                 break;
             case R.id.mvp_base_test:
-                startActivity(new Intent(this, MvpTestActivity.class));
+                startActivity(new Intent(this, ListActivity.class));
                 break;
             case R.id.create_temp:
                 new Thread(new Runnable() {

@@ -16,8 +16,8 @@ import java.util.List;
  */
 public class TestAdapter extends CommonBaseAdapter<String> {
 
-    public TestAdapter(List<String> list, Context context) {
-        super(list, context);
+    public TestAdapter( Context context) {
+        super(context);
     }
 
     @Override
